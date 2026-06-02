@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e293b">
+  <title>Easy Math Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <div class="brand">
+        <img src="icon.svg" alt="Quiz icon" class="logo">
+        <div>
+          <h1>Easy Math Quiz</h1>
+          <p>Practice arithmetic fast and offline.</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="quiz-card" class="card">
+      <div id="start-screen" class="panel active">
+        <h2>Ready to test your math?</h2>
+        <p>Choose the quiz length and start playing.</p>
+        <div class="settings-row">
+          <label for="question-count">Questions:</label>
+          <select id="question-count">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+        <button id="start-btn" class="primary-btn">Start Quiz</button>
+      </div>
+
+      <div id="question-screen" class="panel">
+        <div class="question-header">
+          <span id="question-index">1 / 10</span>
+          <span id="score-label">Score: 0</span>
+        </div>
+        <div id="question-text" class="question-text">What is 2 + 2?</div>
+        <div id="answers" class="answers"></div>
+        <button id="next-btn" class="secondary-btn" disabled>Next</button>
+      </div>
+
+      <div id="result-screen" class="panel">
+        <h2>Quiz complete!</h2>
+        <p id="result-summary">You scored 0 out of 10.</p>
+        <button id="retry-btn" class="primary-btn">Try Again</button>
+      </div>
+    </section>
+
+    <div class="footer-row">
+      <button id="install-btn" class="secondary-btn hidden">Install App</button>
+      <small>Works offline after first visit.</small>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
